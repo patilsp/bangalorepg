@@ -1,3 +1,4 @@
+
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/components/AuthProvider';
@@ -6,6 +7,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/assets/styles/globals.css';
 import 'photoswipe/dist/photoswipe.css';
+import { cn } from "@/lib/utils"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+
 
 export const metadata = {
   title: 'PropertyPulse',
@@ -18,12 +23,26 @@ const MainLayout = ({ children }) => {
     <AuthProvider>
       <GlobalProvider>
         <html lang='en'>
-          <body>
+          {/* <body>
             <Navbar />
             <main>{children}</main>
             <Footer />
+            
+          </body> */}
+
+        <body
+          className={cn(
+            "min-h-screen  font-sans antialiased"
+          )}
+        >
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+                <main className="flex-1">{children}</main>
+              {/* <SiteFooter /> */}
+            </div>
             <ToastContainer />
-          </body>
+        </body>
+
         </html>
       </GlobalProvider>
     </AuthProvider>
