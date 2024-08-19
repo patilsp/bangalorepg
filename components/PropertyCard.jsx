@@ -21,7 +21,7 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
-    <div className='rounded-xl shadow-md relative'>
+    <div className='border bg-white p-1 rounded-xl shadow-md relative'>
       <Image
         src={property.images[0]}
         alt=''
@@ -77,7 +77,7 @@ const PropertyCard = ({ property }) => {
           </div>
           <Link
             href={`/properties/${property._id}`}
-            className='h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm'
+            className='h-[36px] bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-sm text-center text-sm'
           >
             Details
           </Link>

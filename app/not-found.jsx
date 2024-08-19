@@ -1,30 +1,27 @@
-import Link from 'next/link';
-import { FaExclamationTriangle } from 'react-icons/fa';
+import Link from 'next/link'
+import Image from 'next/image'
+import Error from "/assets/images/error.png"
 
-const NotFoundPage = () => {
+export default function NotFound() {
   return (
-    <section className='bg-blue-50 min-h-screen flex-grow'>
-      <div className='container m-auto max-w-2xl py-24'>
-        <div className='bg-white px-6 py-24 mb-4 shadow-md rounded-md border m-4 md:m-0'>
-          <div className='flex justify-center'>
-            <FaExclamationTriangle className='text-yellow-400 text-8xl fa-5x' />
-          </div>
-          <div className='text-center'>
-            <h1 className='text-3xl font-bold mt-4 mb-2'>Page Not Found</h1>
-            <p className='text-gray-500 text-xl mb-10'>
-              The page you are looking for does not exist.
-            </p>
-            <Link
-              href='/'
-              className='bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-6 rounded'
-            >
-              Go Home
-            </Link>
-          </div>
+    <div className="flex flex-col justify-center py-4">
+       
+      <h1 className="mx-auto mt-10 text-xl text-center">Not Found</h1>     
+      <p className="mx-auto my-4 max-w-3xl text-center text-lg text-slate-600 dark:text-slate-400"> Could not find requested resource </p>
+
+
+       <div className='flex w-full justify-center'>
+          <Image
+            src={Error}
+            width={400}
+            height={460}
+            alt='error loading'
+            className='object-contain'
+          />
         </div>
-      </div>
-      <div className='flex-grow'></div>
-    </section>
-  );
-};
-export default NotFoundPage;
+        <div className='w-100 mt-10 flex justify-center'>
+          <Link href="/" className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" >Return Home</Link>
+        </div>
+    </div>
+  )
+}

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 
 const PropertySearchForm = () => {
   const [location, setLocation] = useState('');
@@ -28,48 +27,50 @@ const PropertySearchForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='mt-3 mx-auto max-w-2xl w-full flex flex-col md:flex-row items-center'
+      className='mt-3 mx-auto max-w-3xl w-full flex flex-col md:flex-row items-center bg-white p-4 rounded-lg shadow'
     >
-      <div className='w-full md:w-3/5 md:pr-2 mb-4 md:mb-0'>
+      <div className='w-full md:w-2/4 md:pr-2 mb-4 md:mb-0'>
         <Label htmlFor='location' className='sr-only'>
           Location
         </Label>
-        <input
+        <Input
           type='text'
           id='location'
           placeholder='Enter Keywords or Location'
-          className='w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-slate-700'
+          className='w-full px-4 py-3 '
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
       </div>
-      <div className='w-full md:w-2/5 md:pl-2'>
-        <label htmlFor='property-type' className='sr-only'>
-          Property Type
-        </label>
-        <select
+      <div className='w-full md:w-2/4 md:pl-2 mb-4 md:mb-0'>
+        <Select
           id='property-type'
-          className='w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-slate-700'
+          className='w-full '
           value={propertyType}
-          onChange={(e) => setPropertyType(e.target.value)}
+          onValueChange={setPropertyType}
         >
-          <option value='All'>All</option>
-          <option value='Apartment'>Apartment</option>
-          <option value='Studio'>Studio</option>
-          <option value='Condo'>Condo</option>
-          <option value='House'>House</option>
-          <option value='Cabin Or Cottage'>Cabin or Cottage</option>
-          <option value='Loft'>Loft</option>
-          <option value='Room'>Room</option>
-          <option value='Other'>Other</option>
-        </select>
+          <SelectTrigger>
+            <SelectValue placeholder="Select Property Type" />
+          </SelectTrigger>
+          <SelectContent position="popper">
+            <SelectItem value="All">All</SelectItem>
+            <SelectItem value="Apartment">Apartment</SelectItem>
+            <SelectItem value="Studio">Studio</SelectItem>
+            <SelectItem value="Condo">Condo</SelectItem>
+            <SelectItem value="House">House</SelectItem>
+            <SelectItem value="Cabin Or Cottage">Cabin Or Cottage</SelectItem>
+            <SelectItem value="Loft">Loft</SelectItem>
+            <SelectItem value="Room">Room</SelectItem>
+            <SelectItem value="Other">Other</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
-      <button
+      <Button
         type='submit'
-        className='md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 rounded-lg bg-slate-800 text-white hover:bg-slate-600 focus:outline-none focus:ring focus:ring-slate-700'
+        className='w-full md:w-1/4 ml-2 md:pl-2 mb-4 md:mb-0'
       >
         Search
-      </button>
+      </Button>
     </form>
   );
 };

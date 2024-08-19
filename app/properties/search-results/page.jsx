@@ -36,7 +36,7 @@ const SearchResultsPage = async ({
 
   return (
     <>
-      <section className='bg-blue-700 py-4'>
+      <section className='bg-gray-50 py-4'>
         <div className='max-w-7xl mx-auto px-4 flex flex-col items-start sm:px-6 lg:px-8'>
           <PropertySearchForm />
         </div>
@@ -47,7 +47,7 @@ const SearchResultsPage = async ({
             href='/properties'
             className='flex items-center text-blue-500 hover:underline mb-3'
           >
-            <FaArrowAltCircleLeft className='mr-2 mb-1' /> Back To Properties
+            <FaArrowAltCircleLeft className='mr-2 ' /> Back To Properties
           </Link>
           <h1 className='text-2xl mb-4'>Search Results</h1>
           {properties.length === 0 ? (

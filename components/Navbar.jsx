@@ -4,16 +4,51 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaGoogle } from 'react-icons/fa';
-import logo from '@/assets/images/logo-white.png';
+import logo from '@/assets/images/logo.jpg';
 import profileDefault from '@/assets/images/profile.png';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import UnreadMessageCount from './UnreadMessageCount';
 // import { CommandMenu } from "@/components/command-menu";
 import { Search } from 'lucide-react';
 
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 const Navbar = () => {
   const { data: session } = useSession();
   const profileImage = session?.user?.image;
+  const UserName = session?.user?.name;
+  const UserEmail = session?.user?.email;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -42,8 +77,10 @@ const Navbar = () => {
           {/* Left Side: Logo */}
           <div className='flex-shrink-0'>
             <Link href='/'>
-              {/* <Image className='h-10 w-auto' src={logo} alt='PropertyPulse' /> */}
-              Logo
+              <Image 
+                className='h-10 w-auto rounded-full' 
+                src={logo} 
+                alt='PropertyPulse' />
             </Link>
           </div>
 
@@ -85,7 +122,7 @@ const Navbar = () => {
             <Link href='/messages' className='relative'>
               <button
                 type='button'
-                className='rounded-full bg-gray-800 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                className='rounded-full bg-gray-200 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
               >
                 <span className='sr-only'>View notifications</span>
                 <svg
@@ -106,12 +143,23 @@ const Navbar = () => {
               <UnreadMessageCount />
             </Link>
 
+
+
+
+
             {session && (
               <div className='relative ml-3'>
+                
+
+
+                
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                {/* <Button variant="outline">Open</Button> */}
+
                 <button
                   type='button'
                   className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
-                  onClick={() => setIsProfileMenuOpen((prev) => !prev)}
                 >
                   <Image
                     className='h-8 w-8 rounded-full'
@@ -122,35 +170,81 @@ const Navbar = () => {
                   />
                 </button>
 
-                {isProfileMenuOpen && (
-                  <div
-                    className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
-                  >
-                    <Link
-                      href='/profile'
-                      className='block px-4 py-2 text-sm text-gray-700'
-                      onClick={() => setIsProfileMenuOpen(false)}
-                    >
-                      Your Profile
-                    </Link>
-                    <Link
-                      href='/properties/saved'
-                      className='block px-4 py-2 text-sm text-gray-700'
-                      onClick={() => setIsProfileMenuOpen(false)}
-                    >
-                      Saved Properties
-                    </Link>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 mr-0 md:mr-10">
+                <div className="flex flex-col p-1">
+                  <DropdownMenuLabel>{UserName}</DropdownMenuLabel>
+                  <p className="text-sm ml-2">{UserEmail}</p>
+                </div>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Profile</span>
+                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <CreditCard className="mr-2 h-4 w-4" />
+                    <span>Billing</span>
+                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Settings className="mr-2 h-4 w-4" />
+                    <span>Settings</span>
+                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Keyboard className="mr-2 h-4 w-4" />
+                    <span>Theme</span>
+                    <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                 
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>
+                      <UserPlus className="mr-2 h-4 w-4" />
+                      <span>Invite users</span>
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent>
+                        <DropdownMenuItem>
+                          <Mail className="mr-2 h-4 w-4" />
+                          <span>Email</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <MessageSquare className="mr-2 h-4 w-4" />
+                          <span>Message</span>
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                          <PlusCircle className="mr-2 h-4 w-4" />
+                          <span>More...</span>
+                        </DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
+                
+                </DropdownMenuGroup>
+                
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
                     <button
                       onClick={() => {
-                        setIsProfileMenuOpen(false);
                         signOut({ callbackUrl: '/' });
                       }}
-                      className='block w-full text-left px-4 py-2 text-sm text-gray-700'
+                      className='flex items-center'
                     >
-                      Sign Out
+                      <LogOut  className="mr-2 h-4 w-4" />
+                      <span>Log out</span>
                     </button>
-                  </div>
-                )}
+                  
+                  <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
               </div>
             )}
 
@@ -163,70 +257,17 @@ const Navbar = () => {
                     className='flex items-center text-white bg-slate-800 hover:bg-gray-900 rounded-md px-3 py-2 ml-4'
                   >
                     <FaGoogle className='text-white mr-2' />
-                    <span>Login or Register</span>
+                    <span>Login</span>
                   </button>
                 ))}
               </div>
             )}
 
-            <button
-              type='button'
-              className='md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ml-4'
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              <span className='sr-only'>Open main menu</span>
-              <svg
-                className='block h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                strokeWidth='1.5'
-                stroke='currentColor'
-                aria-hidden='true'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-                />
-              </svg>
-            </button>
+           
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className='md:hidden'>
-          <div className='space-y-1 px-2 pb-3 pt-2'>
-            <Link
-              href='/'
-              className={`${
-                pathname === '/' ? 'bg-slate-800' : ''
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
-            >
-              Home
-            </Link>
-            <Link
-              href='/properties'
-              className={`${
-                pathname === '/properties' ? 'bg-slate-800' : ''
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
-            >
-              Properties
-            </Link>
-            {session && (
-              <Link
-                href='/properties/add'
-                className={`${
-                  pathname === '/properties/add' ? 'bg-slate-800' : ''
-                } text-white block rounded-md px-3 py-2 text-base font-medium`}
-              >
-                Add Property
-              </Link>
-            )}
-          </div>
-        </div>
-      )}
     </nav>
   );
 };

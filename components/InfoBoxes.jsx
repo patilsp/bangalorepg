@@ -1,29 +1,36 @@
 import InfoBox from './InfoBox';
+import Banner from '@/assets/images/banner.jpg';
 
 const InfoBoxes = () => {
   return (
-    <section>
-      <div className='container-xl lg:container m-auto'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg'>
+    <section
+      className="py-8 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${Banner})`, 
+      }}
+    >
+
+      <div className="container max-w-6xl mx-auto text-white px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
           <InfoBox
-            heading='For Renters'
-            backgroundColor='bg-gray-100'
+            heading="For Renters"
+            backgroundColor="bg-orange-400"
             buttonInfo={{
               text: 'Browse Properties',
               link: '/properties',
-              backgroundColor: 'bg-black',
+              backgroundColor: 'bg-slate-800',
             }}
           >
             Find your dream rental property. Bookmark properties and contact
             owners.
           </InfoBox>
           <InfoBox
-            heading='For Property Owners'
-            backgroundColor='bg-blue-100'
+            heading="For Property Owners"
+            backgroundColor="bg-green-400"
             buttonInfo={{
               text: 'Add Property',
               link: '/properties/add',
-              backgroundColor: 'bg-blue-500',
+              backgroundColor: 'bg-slate-800',
             }}
           >
             List your properties and reach potential tenants. Rent as an Airbnb
@@ -34,4 +41,5 @@ const InfoBoxes = () => {
     </section>
   );
 };
+
 export default InfoBoxes;
