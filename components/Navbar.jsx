@@ -8,6 +8,8 @@ import logo from '@/assets/images/logo-white.png';
 import profileDefault from '@/assets/images/profile.png';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import UnreadMessageCount from './UnreadMessageCount';
+// import { CommandMenu } from "@/components/command-menu";
+import { Search } from 'lucide-react';
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -51,15 +53,15 @@ const Navbar = () => {
               href='/'
               className={`${
                 pathname === '/' ? 'bg-gray-800' : ''
-              } hover:bg-gray-700 rounded-3xl px-4 py-2 text-sm font-medium`}
+              } hover:bg-slate-800 rounded-3xl px-4 py-2 text-sm font-medium`}
             >
               Home
             </Link>
             <Link
               href='/properties'
               className={`${
-                pathname === '/properties' ? 'bg-gray-700' : ''
-              } hover:bg-gray-700 rounded-3xl px-4 py-2 text-sm font-medium`}
+                pathname === '/properties' ? 'bg-slate-800' : ''
+              } hover:bg-slate-800 rounded-3xl px-4 py-2 text-sm font-medium`}
             >
               Properties
             </Link>
@@ -67,12 +69,15 @@ const Navbar = () => {
               <Link
                 href='/properties/add'
                 className={`${
-                  pathname === '/properties/add' ? 'bg-gray-700' : ''
-                } hover:bg-gray-700 rounded-3xl px-4 py-2 text-sm font-medium`}
+                  pathname === '/properties/add' ? 'bg-slate-800' : ''
+                } hover:bg-slate-800 rounded-3xl px-4 py-2 text-sm font-medium`}
               >
                 Add Property
               </Link>
             )}
+
+
+            <Search className="mt-2" />
           </div>
 
           {/* Right Side: Profile and Notification */}
@@ -155,7 +160,7 @@ const Navbar = () => {
                   <button
                     key={provider.name}
                     onClick={() => signIn(provider.id)}
-                    className='flex items-center text-white bg-gray-700 hover:bg-gray-900 rounded-md px-3 py-2 ml-4'
+                    className='flex items-center text-white bg-slate-800 hover:bg-gray-900 rounded-md px-3 py-2 ml-4'
                   >
                     <FaGoogle className='text-white mr-2' />
                     <span>Login or Register</span>
@@ -166,7 +171,7 @@ const Navbar = () => {
 
             <button
               type='button'
-              className='md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ml-4'
+              className='md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white ml-4'
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className='sr-only'>Open main menu</span>
@@ -196,7 +201,7 @@ const Navbar = () => {
             <Link
               href='/'
               className={`${
-                pathname === '/' ? 'bg-gray-700' : ''
+                pathname === '/' ? 'bg-slate-800' : ''
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
               Home
@@ -204,7 +209,7 @@ const Navbar = () => {
             <Link
               href='/properties'
               className={`${
-                pathname === '/properties' ? 'bg-gray-700' : ''
+                pathname === '/properties' ? 'bg-slate-800' : ''
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
               Properties
@@ -213,7 +218,7 @@ const Navbar = () => {
               <Link
                 href='/properties/add'
                 className={`${
-                  pathname === '/properties/add' ? 'bg-gray-700' : ''
+                  pathname === '/properties/add' ? 'bg-slate-800' : ''
                 } text-white block rounded-md px-3 py-2 text-base font-medium`}
               >
                 Add Property

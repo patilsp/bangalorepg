@@ -25,7 +25,7 @@ import {
 import { Search } from 'lucide-react'
 
 
-export function CommandMenu({ ...props }: DialogProps) {
+default function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
   const { setTheme } = useTheme()
@@ -100,3 +100,5 @@ export function CommandMenu({ ...props }: DialogProps) {
     </>
   )
 }
+
+export default CommandMenu;
