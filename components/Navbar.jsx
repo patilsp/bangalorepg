@@ -72,7 +72,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full">
-      <div className='mx-auto px-1 text-black sm:px-6 lg:px-8'>
+      <div className='mx-auto px-1 text-black md:px-2'>
         <div className='flex items-center justify-between h-16'>
           {/* Left Side: Logo */}
           <div className='flex-shrink-0'>
