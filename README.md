@@ -1,4 +1,4 @@
-# Property Pulse
+# Namma PG
 
 > A web application to help you find your next rental property.
 
@@ -8,7 +8,8 @@ This is the second iteration of the app/course that uses server actions instead 
 
 The `_theme_files` folder contains the pure HTML files with Tailwind classes.
 
-<img src="/public/images/screen.jpg" />
+![image](https://github.com/user-attachments/assets/d9255a6d-512b-4c52-b07e-28c12f6abfc4)
+
 
 ## Features
 
