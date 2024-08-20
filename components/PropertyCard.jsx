@@ -37,7 +37,7 @@ const PropertyCard = ({ property }) => {
       <div className='px-2 border-t mt-3'>
 
         <h3 className='text-indigo-400 font-bold text-sm text-left'>
-          2 BHK Flat <span className="text-red-300 ml-2 text-sm">{getRateDisplay()} </span>
+        {property.apartmentType} Flat <span className="text-red-300 ml-2 text-sm">{getRateDisplay()} </span>
         </h3>
 
         <div className='flex justify-between gap-2 md:text-center lg:text-left'>

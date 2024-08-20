@@ -26,6 +26,7 @@ async function addProperty(formData) {
     type: formData.get('type'),
     name: formData.get('name'),
     description: formData.get('description'),
+    apartmentType: formData.get('apartmentType'),
     location: {
       street: formData.get('location.street'),
       city: formData.get('location.city'),

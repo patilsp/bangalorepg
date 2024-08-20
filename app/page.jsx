@@ -2,7 +2,8 @@ import Hero from '../components/Hero';
 import InfoBoxes from '@/components/InfoBoxes';
 import HomeProperties from '@/components/HomeProperties';
 import FeaturedProperties from '@/components/FeaturedProperties';
-// import Pricing from '@/components/Pricing';
+import Pricing from '@/components/Pricing';
+import Footer from '@/components/Footer';
 
 const Home = () => {
   return (
@@ -13,7 +14,8 @@ const Home = () => {
       
       <HomeProperties />
       <InfoBoxes />
-      {/* <Pricing /> */}
+      <Pricing /> 
+      <Footer />
       
     </div>
   );

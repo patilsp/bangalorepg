@@ -54,6 +54,25 @@ const PropertyAddForm = () => {
         ></textarea>
       </div>
 
+      <div className='mb-4'>
+        <label htmlFor='apartmentType' className='block text-gray-700 font-bold mb-2'>
+          Apartment Type
+        </label>
+        <select
+          id='apartmentType'
+          name='type'
+          className='border rounded w-full py-2 px-3'
+          required
+        >
+          <option value='1 RK'>1 RK</option>
+          <option value='1 BHK'>1 BHK</option>
+          <option value='2 BHK'>2 BHK</option>
+          <option value='3 BHK'>3 BHK</option>
+          <option value='4 BHK'>4 BHK</option>
+          <option value='5 BHK'>5 BHK</option>
+          
+        </select>
+      </div>
       <div className='mb-4 bg-blue-50 p-4'>
         <label className='block text-gray-700 font-bold mb-2'>Location</label>
         <input
