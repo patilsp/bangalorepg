@@ -77,10 +77,11 @@ const Navbar = () => {
           {/* Left Side: Logo */}
           <div className='flex-shrink-0'>
             <Link href='/'>
-              <Image 
+              {/* <Image 
                 className='h-10 w-auto rounded-full' 
                 src={logo} 
-                alt='PropertyPulse' />
+                alt='PropertyPulse' /> */}
+                <h1 className="font-bold text-xl">Namma PG</h1>
             </Link>
           </div>
 
@@ -89,16 +90,16 @@ const Navbar = () => {
             <Link
               href='/'
               className={`${
-                pathname === '/' ? 'bg-gray-800' : ''
-              } hover:bg-slate-800 rounded-3xl px-4 py-2 text-sm font-medium`}
+                pathname === '/' ? 'bg-black' : ''
+              } hover:bg-black rounded-3xl px-4 py-2 text-sm font-medium`}
             >
               Home
             </Link>
             <Link
               href='/properties'
               className={`${
-                pathname === '/properties' ? 'bg-slate-800' : ''
-              } hover:bg-slate-800 rounded-3xl px-4 py-2 text-sm font-medium`}
+                pathname === '/properties' ? 'bg-black' : ''
+              } hover:bg-black rounded-3xl px-4 py-2 text-sm font-medium`}
             >
               Properties
             </Link>
@@ -106,8 +107,8 @@ const Navbar = () => {
               <Link
                 href='/properties/add'
                 className={`${
-                  pathname === '/properties/add' ? 'bg-slate-800' : ''
-                } hover:bg-slate-800 rounded-3xl px-4 py-2 text-sm font-medium`}
+                  pathname === '/properties/add' ? 'bg-black' : ''
+                } hover:bg-black rounded-3xl px-4 py-2 text-sm font-medium`}
               >
                 Add Property
               </Link>
@@ -254,7 +255,7 @@ const Navbar = () => {
                   <button
                     key={provider.name}
                     onClick={() => signIn(provider.id)}
-                    className='flex items-center text-white bg-slate-800 hover:bg-gray-900 rounded-md px-3 py-2 ml-4'
+                    className='flex items-center text-white bg-black hover:bg-gray-900 rounded-md px-3 py-2 ml-4'
                   >
                     <FaGoogle className='text-white mr-2' />
                     <span>Login</span>

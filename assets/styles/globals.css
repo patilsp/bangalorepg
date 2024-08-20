@@ -67,3 +67,34 @@
     @apply bg-background text-foreground;
   }
 }
+
+.btn-primary{
+      display: inline-flex;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    width: 300px;
+    line-height: 1.2;
+    border-radius: 45px;
+    font-weight: var(--chakra-fontWeights-semibold);
+    font-size: var(--chakra-fontSizes-sm);
+    transition: 0.25s;
+    box-sizing: border-box;
+    height: 54px;
+    min-width: var(--chakra-sizes-10);
+    padding-inline: 16px;
+    background: linear-gradient(15.46deg, rgb(74, 37, 225) 26.3%, rgb(123, 90, 255) 86.4%);
+    color: var(--chakra-colors-white);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-inline-end: 0px;
+
+}
