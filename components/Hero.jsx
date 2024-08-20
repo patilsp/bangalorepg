@@ -14,7 +14,7 @@ const Hero = () => {
     >
       <div className='flex flex-col items-center justify-center h-full'>
        
-        <div className='absolute bottom-24 w-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center'>
+        <div className='absolute bottom-36 md:bottom-24  w-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center'>
           <div className='text-center mb-8'>
             <h1 className='text-4xl font-extrabold text-white sm:text-5xl md:text-6xl'>
               Find The Perfect Rental

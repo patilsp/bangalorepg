@@ -6,7 +6,7 @@ import FeaturedProperties from '@/components/FeaturedProperties';
 
 const Home = () => {
   return (
-    <div>
+    <div className="mb-10 pb-10">
       <Hero />
      
       <FeaturedProperties />

@@ -16,14 +16,14 @@ const PropertiesPage = async ({ searchParams: { pageSize = 9, page = 1 } }) => {
 
   return (
     <>
-      <section className='bg-blue-700 py-4'>
+      <section className='bg-gradient py-4'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start'>
           <PropertySearchForm />
         </div>
       </section>
       <section className='px-4 py-6'>
         <div className='container-xl lg:container m-auto px-4 py-6'>
-          <h1 className='text-2xl mb-4 text-center font-semibold'>Browse Properties</h1>
+          <h1 className='text-2xl mb-4 text-center font-bold'>Browse Properties</h1>
           {properties.length === 0 ? (
             <p>No properties found</p>
           ) : (

@@ -4,14 +4,14 @@ import Banner from '@/assets/images/banner.jpg';
 const InfoBoxes = () => {
   return (
     <section
-      className="py-8 bg-cover bg-center bg-no-repeat"
+      className="g-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${Banner})`, 
       }}
     >
 
-      <div className="container max-w-6xl mx-auto text-white px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+      <div className="mx-auto text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-2">
           <InfoBox
             heading="For Renters"
             backgroundColor="bg-orange-400"
