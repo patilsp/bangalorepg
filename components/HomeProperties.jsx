@@ -15,8 +15,8 @@ const HomeProperties = async () => {
 
   return (
     <>
-      <section className='px-4 py-6 bg-gray-100'>
-        <div className='container m-auto'>
+      <section className='px-4 py-6 bg-white'>
+        <div className='container-fluid m-auto'>
           <div className="flex items-center justify-between gap-2">
           <h2 className='text-2xl font-bold text-indigo-500 mb-6 text-left'>
             Recent Properties

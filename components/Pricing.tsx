@@ -25,7 +25,7 @@ function PricingTab(props: PricingTabProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      <div class="w-64 h-full  p-6 bg-indigo-500  dark:text-slate-200 shadow-lg rounded-lg dark:bg-gray-800">
+      <div class="w-64 h-full  p-6 bg-indigo-500 text-white shadow-lg rounded-lg">
       {/* <div className="relative flex flex-col h-full p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-900 shadow shadow-slate-950/5"> */}
         {props.popular && (
           <div className="absolute top-0 right-0 mr-6 -mt-4">
@@ -34,7 +34,7 @@ function PricingTab(props: PricingTabProps) {
             </div>
           </div>
         )}
-        <div className="mb-5">
+        <div className="mb-5 ">
           <div className="flex justify-between gap-2">
             <div className="text-white text-xl dark:text-slate-200 font-semibold mb-1">
               {props.planName}

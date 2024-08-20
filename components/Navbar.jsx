@@ -26,6 +26,7 @@ import {
   User,
   UserPlus,
   Users,
+  Bell,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -43,6 +44,14 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+// import { Notification } from "@/components/Notification"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/Card'
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -120,7 +129,7 @@ const Navbar = () => {
 
           {/* Right Side: Profile and Notification */}
           <div className='flex items-center'>
-            <Link href='/messages' className='relative'>
+            {/* <Link href='/messages' className='relative'>
               <button
                 type='button'
                 className='rounded-full bg-gray-200 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
@@ -142,9 +151,29 @@ const Navbar = () => {
                 </svg>
               </button>
               <UnreadMessageCount />
-            </Link>
+            </Link> */}
 
 
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button variant="ghost" className="p-1 rounded-md border-input bg-transparent border shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
+                    <Bell className="bell" size={20}  />
+                    <UnreadMessageCount />
+                  </button>
+                </DropdownMenuTrigger>      
+                <DropdownMenuContent className="w-100" align="end" forceMount>
+                <Card className="border-none shadow-none">
+                  <CardHeader className="pb-3">
+                    <CardTitle>Notifications</CardTitle>
+                    <CardDescription>
+                      Choose what you want to be notified about.
+                    </CardDescription>
+                  </CardHeader>
+                  {/* <Notification /> */}
+                </Card>
+              </DropdownMenuContent>
+            </DropdownMenu>
+        
 
 
 

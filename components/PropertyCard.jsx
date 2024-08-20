@@ -41,7 +41,7 @@ const PropertyCard = ({ property }) => {
         </h3>
 
         <div className='flex justify-between gap-2 md:text-center lg:text-left'>
-          <h3 className='text-xl font-bold'>{property.name}</h3>
+          <h3 className='text-base font-semibold'>{property.name}</h3>
           <h1 className='relative -top-9 bg-slate-100 border border-spacing-1 border-white rounded-lg shadow px-6 py-1 text-black font-bold '>{property.type}</h1>
         </div>
 
@@ -51,32 +51,34 @@ const PropertyCard = ({ property }) => {
           <FaHeart className="mr-1 bg-white p-2 shadow size-8 rounded-full hover:bg-red-500 hover:text-white cursor-pointer"/>
         </h3>
 
-        <div className='grid grid-cols-2 gap-2 md:gap-4 font-bold text-slate-700 mb-2'>
-          <p className="flex items-center gap-1 col-span-1">
-            <FaBed className='p-2 size-10 text-black bg-gray-100 rounded-full shadow' /> {property.beds}
-            <span className='hidden md:inline'> Beds</span>
-          </p>
-          <p className="flex items-center gap-1 col-span-1">
-            <FaBath className='p-2 size-10 text-black bg-gray-100 rounded-full shadow' /> {property.baths}
-            <span className='hidden md:inline'> Baths</span>
-          </p>
-          <p className="flex items-center gap-1 col-span-1">
-            <FaRulerCombined className='p-2 size-10 text-black bg-gray-100 rounded-full shadow' /> {property.square_feet}
-            <span className='hidden md:inline'> sqft</span>
-          </p>
-          <p className="flex items-center gap-1 col-span-1">
-            <FaMoneyBill className='p-2 size-10 text-black bg-gray-100 rounded-full shadow' /> Monthly
-          </p>
-        </div>
-        <div className='border border-gray-100 mb-2'></div>
-
-        <div className='flex lg:flex-row justify-between p-1'>
-          <div className='flex items-center gap-2 pb-4 lg:mb-0'>
+        <div className='flex items-center gap-2 pb-4 lg:mb-0'>
             <FaMapMarker className='bg-gray-50 shadow rounded-lg text-orange-700 font-semibold mt-1' />
             <span className='text-orange-700 font-semibold'>
               {property.location.city}, {property.location.state}
             </span>
           </div>
+          <div className='border border-gray-100 mb-2'></div>
+
+        <div className='grid grid-cols-3 gap-2 md:gap-4 font-bold text-slate-700 mb-2'>
+          <p className="flex items-center gap-1 col-span-1">
+            <FaBed className='p-2 size-8 text-black bg-gray-100 rounded-full shadow' /> {property.beds}
+            <span className='hidden md:inline'> Beds</span>
+          </p>
+          <p className="flex items-center gap-1 col-span-1">
+            <FaBath className='p-2 size-8 text-black bg-gray-100 rounded-full shadow' /> {property.baths}
+            <span className='hidden md:inline'> Baths</span>
+          </p>
+          <p className="flex items-center gap-1 col-span-1">
+            <FaRulerCombined className='p-2 size-8 text-black bg-gray-100 rounded-full shadow' /> {property.square_feet}
+            <span className='hidden md:inline'> sqft</span>
+          </p>
+          {/* <p className="flex items-center gap-1 col-span-1">
+            <FaMoneyBill className='p-2 size-8 text-black bg-gray-100 rounded-full shadow' /> Monthly
+          </p> */}
+        </div>
+
+        <div className='flex lg:flex-row justify-between p-1'>
+         
           {/* <Link
             href={`/properties/${property._id}`}
             className='h-[36px] bg-slate-900 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-center text-sm'
