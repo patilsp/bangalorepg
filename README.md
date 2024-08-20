@@ -1,4 +1,4 @@
-# Property Pulse
+# Namma PG
 
 > A web application to help you find your next rental property.
 
