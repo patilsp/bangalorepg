@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { Button }  from "@/components/ui/Button";
+import { Button }  from "@/components/ui/button";
 
 interface PricingTabProps {
   yearly: boolean;
@@ -72,12 +72,12 @@ function PricingTab(props: PricingTabProps) {
             );
           })}
         </ul>
-        <button
-            className="w-full mt-4 bg-black text-white rounded-md shadow hover:bg-slate-800"
+        <Button
+            className="w-full mt-4"
             href="#0"
           >
             Book Now
-          </button>
+          </Button>
       </div>
     </motion.div>
   );
