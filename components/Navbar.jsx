@@ -250,7 +250,7 @@ const Navbar = () => {
             )}
 
             {!session && providers && (
-              <div className='hidden md:flex items-center'>
+              <div className='flex items-center'>
                 {Object.values(providers).map((provider) => (
                   <button
                     key={provider.name}
