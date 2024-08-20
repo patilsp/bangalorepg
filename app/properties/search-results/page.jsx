@@ -36,13 +36,14 @@ const SearchResultsPage = async ({
 
   return (
     <>
-      <section className='bg-gray-50 py-4'>
+      <section className='bg-white py-4'>
         <div className='max-w-7xl mx-auto px-4 flex flex-col items-start sm:px-6 lg:px-8'>
           <PropertySearchForm />
         </div>
       </section>
       <section className='px-4 py-6'>
         <div className='container-xl lg:container m-auto px-4 py-6'>
+          <div className="flex justify-between gap-2">
           <Link
             href='/properties'
             className='flex items-center text-blue-500 hover:underline mb-3'
@@ -50,6 +51,7 @@ const SearchResultsPage = async ({
             <FaArrowAltCircleLeft className='mr-2 ' /> Back To Properties
           </Link>
           <h1 className='text-2xl mb-4'>Search Results</h1>
+          </div>
           {properties.length === 0 ? (
             <p>No search results found</p>
           ) : (

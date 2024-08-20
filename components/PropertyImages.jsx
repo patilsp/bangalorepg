@@ -6,7 +6,7 @@ const PropertyImages = ({ images }) => {
   return (
     <Gallery>
       <section className='bg-blue-50 p-4'>
-        <div className='container mx-auto'>
+        <div className='grid col-span-2 md:col-span-4 mx-auto'>
           {images.length === 1 ? (
             <Item
               original={images[0]}

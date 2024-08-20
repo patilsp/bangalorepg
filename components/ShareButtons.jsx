@@ -15,41 +15,43 @@ const ShareButtons = ({ property }) => {
 
   return (
     <>
-      <h3 className='text-xl font-bold text-center pt-2'>
+    <div className="container max-w-2xl bg-indigo-400 rounded-lg shadow-lg p-2 md:p-6">
+      <h3 className='text-2xl font-bold text-center pt-2 mb-2'>
         Share This Property:
       </h3>
       <div className='flex gap-3 justify-center pb-5'>
-        <FacebookShareButton
-          url={shareUrl}
-          quote={property.name}
-          hashtag={`#${property.type.replace(/\s/g, '')}ForRent`}
-        >
-          <FacebookIcon size={40} round={true} />
-        </FacebookShareButton>
+          <FacebookShareButton
+            url={shareUrl}
+            quote={property.name}
+            hashtag={`#${property.type.replace(/\s/g, '')}ForRent`}
+          >
+            <FacebookIcon size={40} round={true} />
+          </FacebookShareButton>
 
-        <TwitterShareButton
-          url={shareUrl}
-          title={property.name}
-          hashtags={[`${property.type.replace(/\s/g, '')}ForRent`]}
-        >
-          <TwitterIcon size={40} round={true} />
-        </TwitterShareButton>
+          <TwitterShareButton
+            url={shareUrl}
+            title={property.name}
+            hashtags={[`${property.type.replace(/\s/g, '')}ForRent`]}
+          >
+            <TwitterIcon size={40} round={true} />
+          </TwitterShareButton>
 
-        <WhatsappShareButton
-          url={shareUrl}
-          title={property.name}
-          separator=':: '
-        >
-          <WhatsappIcon size={40} round={true} />
-        </WhatsappShareButton>
+          <WhatsappShareButton
+            url={shareUrl}
+            title={property.name}
+            separator=':: '
+          >
+            <WhatsappIcon size={40} round={true} />
+          </WhatsappShareButton>
 
-        <EmailShareButton
-          url={shareUrl}
-          subject={property.name}
-          body={`Check out this property listing: ${shareUrl}`}
-        >
-          <EmailIcon size={40} round={true} />
-        </EmailShareButton>
+          <EmailShareButton
+            url={shareUrl}
+            subject={property.name}
+            body={`Check out this property listing: ${shareUrl}`}
+          >
+            <EmailIcon size={40} round={true} />
+          </EmailShareButton>
+        </div>
       </div>
     </>
   );

@@ -24,30 +24,28 @@ const PropertyCard = ({ property }) => {
   return (
     <div className='border-gray-50 border-2 bg-white rounded-xl shadow-md relative'>
       <div className="relative overflow-hidden rounded-t-xl h-60">
-        <Image
-          src={property.images[0]}
-          alt=''
-          fill
-          className='object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-95'
-          priority={true}
-        />
+      <Link href={`/properties/${property._id}`} >
+          <Image
+            src={property.images[0]}
+            alt=''
+            fill
+            className='object-cover rounded-lg transition-transform duration-300 ease-in-out hover:scale-95'
+            priority={true}
+          />
+        </Link>
       </div>
-      <div className='px-2 border-t mt-1'>
-        <div className='absolute -top-10 px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right'>
-        </div>
+      <div className='px-2 border-t mt-3'>
 
-        <h3 className='text-blue-500 font-bold text-left'>
-          2 BHK Flat
+        <h3 className='text-indigo-400 font-bold text-sm text-left'>
+          2 BHK Flat <span className="text-red-300 ml-2 text-sm">{getRateDisplay()} </span>
         </h3>
 
         <div className='flex justify-between gap-2 md:text-center lg:text-left'>
           <h3 className='text-xl font-bold'>{property.name}</h3>
-          <h1 className='relative -top-6 bg-slate-100 border border-spacing-1 border-white rounded-lg shadow px-6 py-1 text-black font-bold '>{property.type}</h1>
+          <h1 className='relative -top-9 bg-slate-100 border border-spacing-1 border-white rounded-lg shadow px-6 py-1 text-black font-bold '>{property.type}</h1>
         </div>
 
-        <h3 className='absolute top-[10px] left-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right'>
-          {getRateDisplay()}
-        </h3>
+        
 
         <h3 className='absolute top-[10px] right-[10px] py-1 text-red-500 font-bold text-right md:text-center lg:text-right'>
           <FaHeart className="mr-1 bg-white p-2 shadow size-8 rounded-full hover:bg-red-500 hover:text-white cursor-pointer"/>
@@ -72,22 +70,23 @@ const PropertyCard = ({ property }) => {
         </div>
         <div className='border border-gray-100 mb-2'></div>
 
-        <div className='flex lg:flex-row justify-between'>
-          <div className='flex items-center gap-2 mb-4 lg:mb-0'>
+        <div className='flex lg:flex-row justify-between p-1'>
+          <div className='flex items-center gap-2 pb-4 lg:mb-0'>
             <FaMapMarker className='bg-gray-50 shadow rounded-lg text-orange-700 font-semibold mt-1' />
             <span className='text-orange-700 font-semibold'>
               {property.location.city}, {property.location.state}
             </span>
           </div>
-          <Link
+          {/* <Link
             href={`/properties/${property._id}`}
             className='h-[36px] bg-slate-900 hover:bg-slate-700 text-white px-4 py-2 rounded-lg text-center text-sm'
           >
             Details
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
   );
 };
+
 export default PropertyCard;

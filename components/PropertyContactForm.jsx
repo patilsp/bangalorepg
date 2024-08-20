@@ -10,7 +10,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Spinner } from "@/components/ui/spinner";  // Assuming you have a spinner component
+import { Spinner } from "@/components/ui/spinner";  
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 const PropertyContactForm = ({ property }) => {
   const { data: session } = useSession();
@@ -45,8 +55,19 @@ const PropertyContactForm = ({ property }) => {
 
   return (
     session && (
-      <div className='bg-white p-6 rounded-lg shadow-md max-w-3xl mx-auto'>
-        <h3 className='text-2xl font-bold mb-6'>Contact Property Manager</h3>
+
+      <Dialog>
+      <DialogTrigger asChild>
+        <button className="bg-green-500 hover:bg-green-600 text-white font-bold h-10 w-[300px] mt-2 py-3 px-4 border rounded-lg flex items-center justify-center">Contact Property Manager</button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Contact Property Manager</DialogTitle>
+          <DialogDescription>
+            Add data here and Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className=''>
         <form onSubmit={handleSubmit}>
           <input
             type='hidden'
@@ -84,7 +105,7 @@ const PropertyContactForm = ({ property }) => {
               />
             </div>
 
-            <div>
+            <div className="w-full">
               <Label htmlFor='phone'>Phone</Label>
               <Input
                 id='phone'
@@ -113,6 +134,9 @@ const PropertyContactForm = ({ property }) => {
           </div>
         </form>
       </div>
+      </DialogContent>
+    </Dialog>
+      
     )
   );
 };
