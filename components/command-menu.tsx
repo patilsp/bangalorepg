@@ -52,7 +52,7 @@ export default function CommandMenu({ ...props }: DialogProps) {
         onClick={() => setOpen(true)}
         {...props}
       >
-        <Search className="mb-1 size-6 rounded-full text-gray-500 hover:bg-transparent group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-500" />
+        <Search className="mb-1 size-6 rounded-full text-white hover:bg-transparent group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-500" />
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />

@@ -25,7 +25,7 @@ function PricingTab(props: PricingTabProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
-      <div class="w-64 h-full  p-6 bg-indigo-500 text-white shadow-lg rounded-lg">
+      <div class="w-full h-full  p-6 bg-indigo-500 text-white shadow-lg rounded-lg">
       {/* <div className="relative flex flex-col h-full p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-900 shadow shadow-slate-950/5"> */}
         {props.popular && (
           <div className="absolute top-0 right-0 mr-6 -mt-4">
@@ -46,7 +46,7 @@ function PricingTab(props: PricingTabProps) {
               <span className="text-slate-900 dark:text-slate-200 font-bold text-4xl">
                 {props.yearly ? props.price.yearly : props.price.monthly}
               </span>
-              <span className="text-slate-500 font-medium">/mo</span>
+              <span className="text-red-400 font-bold">/mo</span>
             </div>
           </div>
           <div className="text-sm text-white mb-5">{props.planDescription}</div>
@@ -60,7 +60,7 @@ function PricingTab(props: PricingTabProps) {
             return (
               <li key={index} className="flex items-center ">
                 <svg
-                  className="bg-gray-50 text-white mr-3 size-6 p-1 shadow-lg rounded-full"
+                  className="bg-gray-50 text-white mr-3 size-6 p-2 shadow-lg rounded-full"
                   viewBox="0 0 12 12"
                   fill="black"
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export default function Pricing() {
 
         </div>
 
-        <div className="relative w-[300px] flex justify-center m-auto p-1 px-2 gap-4 bg-green-400 dark:bg-slate-900 rounded-full">
+        <div className="relative w-[300px] flex justify-center m-auto p-1 gap-4 bg-green-400 dark:bg-slate-900 rounded-full">
           <span className="absolute inset-0 m-1 pointer-events-none " aria-hidden="true">
             <span
               className={` bg-indigo-500 w-full m-auto rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out ${
@@ -105,16 +105,16 @@ export default function Pricing() {
           </span>
           <button
             className={`relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-              isAnnual ? 'text-white bg-green-600' : 'text-slate-500 dark:text-slate-400'
+              isAnnual ? 'text-white bg-green-500' : 'text-slate-500'
             }`}
             onClick={() => setIsAnnual(true)}
             aria-pressed={isAnnual}
           >
-            Yearly <span className={`${isAnnual ? 'text-indigo-200 bg-green-600' : 'text-slate-400 dark:text-slate-500'}`}></span>
+            Yearly <span className={`${isAnnual ? 'text-white' : 'text-slate-400  dark:text-slate-500'}`}></span>
           </button>
           <button
-            className={`relative flex-1 text-sm font-medium h-8 bg-green-600 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
-              isAnnual ? 'text-slate-500 dark:text-slate-400' : 'text-white bg-green-600'
+            className={`relative flex-1 text-sm font-medium h-8  rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out ${
+              isAnnual ? 'text-slate-500 dark:text-slate-400 ' : 'text-white bg-green-500'
             }`}
             onClick={() => setIsAnnual(false)}
             aria-pressed={isAnnual}
@@ -124,7 +124,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className=" mx-auto grid gap-6 m-2 p-4 lg:grid-cols-3 items-start lg:max-w-none">
+      <div className="w-full mx-auto grid gap-6 m-2 p-4 lg:grid-cols-3 items-start lg:max-w-none">
         {/* Pricing tab 1 */}
         <PricingTab
           yearly={isAnnual}

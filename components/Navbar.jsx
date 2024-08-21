@@ -8,7 +8,7 @@ import logo from '@/assets/images/logo.jpg';
 import profileDefault from '@/assets/images/profile.png';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import UnreadMessageCount from './UnreadMessageCount';
-// import { CommandMenu } from "@/components/command-menu";
+import CommandMenu  from "@/components/command-menu";
 import { Search } from 'lucide-react';
 
 import {
@@ -44,7 +44,6 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-// import { Notification } from "@/components/Notification"
 import {
   Card,
   CardContent,
@@ -122,9 +121,7 @@ const Navbar = () => {
                 Add Property
               </Link>
             )}
-
-
-            <Search className="mt-2" />
+            <CommandMenu className="mt-2" />
           </div>
 
           {/* Right Side: Profile and Notification */}
@@ -156,8 +153,8 @@ const Navbar = () => {
 
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button variant="ghost" className="p-1 rounded-md border-input bg-transparent border shadow-sm hover:bg-accent hover:text-slate-900 mr-1 ">                
-                    <Bell className="bell" size={20}  />
+                  <button variant="ghost" className="p-1 rounded-md border-input bg-transparent border shadow-sm hover:bg-accent hover:text-slate-900">                
+                    <Bell className="bell hover:fill-black" size={20}  />
                     <UnreadMessageCount />
                   </button>
                 </DropdownMenuTrigger>      

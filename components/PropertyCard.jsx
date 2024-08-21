@@ -22,6 +22,7 @@ const PropertyCard = ({ property }) => {
   };
 
   return (
+   
     <div className='border-gray-50 border-2 bg-white rounded-xl shadow-md relative'>
       <div className="relative overflow-hidden rounded-t-xl h-60">
       <Link href={`/properties/${property._id}`} >

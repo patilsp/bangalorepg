@@ -24,15 +24,15 @@ const Footer = () => {
               >
                 <a href="index.html" className="relative">
                   <Image
-                    width={80}
-                    height={80}
+                    width={60}
+                    height={60}
                     src="/images/logo.png"
                     alt="Logo"
                     className="dark:hidden"
                   />
                   <Image
-                    width={110}
-                    height={80}
+                    width={60}
+                    height={60}
                     src="/images/logo/logo-dark.svg"
                     alt="Logo"
                     className="hidden dark:block"
@@ -54,7 +54,7 @@ const Footer = () => {
                 </a>
               </motion.div>
 
-              <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-4 lg:w-2/3 xl:w-7/12">
+              <div className="flex w-full gap-8 flex-row md:justify-between md:gap-4 lg:w-2/3 xl:w-7/12">
                 <motion.div
                   variants={{
                     hidden: { opacity: 0, y: -20 },
@@ -228,7 +228,7 @@ const Footer = () => {
               </a>
             </motion.div>
           </div>
-          {/* <!-- Footer Bottom --> */}
+
         </div>
       </footer>
     </>
