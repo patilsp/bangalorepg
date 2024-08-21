@@ -43,14 +43,14 @@ const SearchResultsPage = async ({
       </section>
       <section className='px-4 py-6'>
         <div className='container-xl lg:container m-auto px-4 py-6'>
-          <div className="flex justify-between gap-2">
+          <div className="flex flex-col justify-between gap-2">
           <Link
             href='/properties'
             className='flex items-center text-blue-500 hover:underline mb-3'
           >
             <FaArrowAltCircleLeft className='mr-2 ' /> Back To Properties
           </Link>
-          <h1 className='text-2xl mb-4'>Search Results</h1>
+          <h1 className='text-xl mb-4'>Search Results</h1>
           </div>
           {properties.length === 0 ? (
             <p>No search results found</p>

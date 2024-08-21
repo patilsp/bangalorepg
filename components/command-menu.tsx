@@ -20,7 +20,8 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { Search } from "lucide-react";
+import { Button } from "@/components/ui/button"
+import { Search } from 'lucide-react'
 
 export default function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter();
@@ -46,13 +47,15 @@ export default function CommandMenu({ ...props }: DialogProps) {
   return (
     <>
       <button
+        variant="outline"
         className={cn(
-          "group inline-flex flex-col items-center justify-center hover:bg-transparent dark:hover:bg-gray-800"
+          "relative hover:bg-gray-200 rounded-lg"
         )}
         onClick={() => setOpen(true)}
         {...props}
       >
-        <Search className="mb-1 size-6 rounded-full text-white hover:bg-transparent group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-500" />
+      
+      <Search className="text-black hover:fill-black ml-1" size={20}/>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />

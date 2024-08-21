@@ -23,7 +23,7 @@ const HomeProperties = async () => {
           </h2>
           <Link
             href='/properties'
-            className='flex justify-between gap-1 bg-indigo-400 hover:bg-indigo-600 p-1 px-2 rounded-md shadow text-white'
+            className='flex items-center justify-between gap-1 bg-indigo-400 hover:bg-indigo-600 p-1 px-2 rounded-md shadow text-sm text-white'
           >
             View All Properties <ArrowRight className="text-white"/>
           </Link>

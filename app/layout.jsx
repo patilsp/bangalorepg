@@ -13,9 +13,15 @@ import { SiteFooter } from "@/components/site-footer"
 
 
 export const metadata = {
-  title: 'PropertyPulse',
-  description: 'Find The Perfect Rental Property',
+  title: 'Namma PG',
+  description: 'Find The Perfect PG for Bachelor',
   keywords: 'rental, property, real estate',
+
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 const MainLayout = ({ children }) => {
@@ -38,7 +44,7 @@ const MainLayout = ({ children }) => {
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
                 <main className="flex-1">{children}</main>
-              <SiteFooter />
+              {/* <SiteFooter /> */}
             </div>
             <ToastContainer />
         </body>

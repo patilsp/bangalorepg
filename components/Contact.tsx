@@ -2,7 +2,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { ArrowRight } from "lucide-react"
 
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 const Contact = () => {
 
   const [hasMounted, setHasMounted] = React.useState(false);
@@ -17,21 +21,6 @@ const Contact = () => {
     <>
       <section id="support" className="px-4 md:px-8 2xl:px-0 py-10 bg-gradient-to-b from-indigo-100 via-blue-200 to-purple-200 dark:bg-gradient-to-b dark:from-gray-800 dark:via-gray-900 dark:to-black">
         <div className="relative mx-auto max-w-c-1390 px-7.5 lg:px-15 xl:px-20">
-          <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-gradient-to-t from-transparent to-[#dee7ff47] dark:bg-gradient-to-t dark:to-[#252A42]"></div>
-          <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
-            <Image
-              src="./images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="dark:hidden"
-              fill
-            />
-            <Image
-              src="./images/shape/shape-dotted-dark.svg"
-              alt="Dotted"
-              className="hidden dark:block"
-              fill
-            />
-          </div>
 
           <div className="flex flex-col-reverse flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
             <motion.div
@@ -49,39 +38,39 @@ const Contact = () => {
               whileInView="visible"
               transition={{ duration: 1, delay: 0.1 }}
               viewport={{ once: true }}
-              className="w-full rounded-lg bg-white p-8 shadow-xl dark:border dark:border-strokedark dark:bg-gray-800 md:w-3/5 lg:w-3/4 xl:p-15"
+              className="w-full rounded-lg bg-white p-8 shadow-xl dark:border  dark:bg-gray-800 md:w-3/5 lg:w-3/4 xl:p-15"
             >
-              <h2 className="mb-8 text-3xl font-bold text-gray-900 dark:text-gray-100 xl:text-sectiontitle2">
+              <h2 className="mb-8 text-3xl font-bold text-gray-900 dark:text-gray-100">
                 Send a Message
               </h2>
 
               <form
-                action="https://formbold.com/s/unique_form_id"
+                action="/send"
                 method="POST"
               >
-                <div className="mb-7 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
-                  <input
+                <div className="mb-7 flex flex-col gap-4 space-y-2 lg:flex-row lg:justify-between lg:gap-14">
+                  <Input
                     type="text"
                     placeholder="Full Name"
-                    className="w-full border-b border-gray-300 bg-transparent pb-3.5 text-gray-800 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-900 focus-visible:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-indigo-400 dark:focus:placeholder-gray-400 lg:w-1/2"
+                    className="w-full border-b border-gray-300 bg-transparent "
                   />
-                  <input
+                  <Input
                     type="email"
                     placeholder="Email Address"
-                    className="w-full border-b border-gray-300 bg-transparent pb-3.5 text-gray-800 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-900 focus-visible:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-indigo-400 dark:focus:placeholder-gray-400 lg:w-1/2"
+                    className="w-full border-b border-gray-300 bg-transparent "
                   />
                 </div>
 
-                <div className="mb-8 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
-                  <input
+                <div className="mb-8 flex flex-col gap-4 space-y-2 lg:flex-row lg:justify-between lg:gap-14">
+                  <Input
                     type="text"
                     placeholder="Subject"
-                    className="w-full border-b border-gray-300 bg-transparent pb-3.5 text-gray-800 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-900 focus-visible:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-indigo-400 dark:focus:placeholder-gray-400 lg:w-1/2"
+                    className="w-full border-b border-gray-300 bg-transparent "
                   />
-                  <input
+                  <Input
                     type="text"
                     placeholder="Phone Number"
-                    className="w-full border-b border-gray-300 bg-transparent pb-3.5 text-gray-800 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-900 focus-visible:outline-none dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-indigo-400 dark:focus:placeholder-gray-400 lg:w-1/2"
+                    className="w-full border-b border-gray-300 bg-transparent "
                   />
                 </div>
 

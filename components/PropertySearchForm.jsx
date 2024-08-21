@@ -27,7 +27,7 @@ const PropertySearchForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='mt-3 mx-auto max-w-3xl w-full flex flex-col md:flex-row items-center bg-white p-4 rounded-lg shadow'
+      className='mt-5 mx-auto max-w-3xl w-full flex flex-col md:flex-row items-center bg-white p-4 rounded-lg shadow'
     >
       <div className='w-full md:w-2/4 md:pr-2 mb-4 md:mb-0'>
         <Label htmlFor='location' className='sr-only'>

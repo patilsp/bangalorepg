@@ -9,6 +9,8 @@ import profileDefault from '@/assets/images/profile.png';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import UnreadMessageCount from './UnreadMessageCount';
 import CommandMenu  from "@/components/command-menu";
+import MobileNav  from "@/components/mobile-nav";
+import MainNav  from "@/components/main-nav";
 import { Search } from 'lucide-react';
 
 import {
@@ -82,75 +84,16 @@ const Navbar = () => {
     <nav className="w-full">
       <div className='mx-auto px-1 text-black md:px-2'>
         <div className='flex items-center justify-between h-16'>
-          {/* Left Side: Logo */}
-          <div className='flex-shrink-0'>
-            <Link href='/'>
-              {/* <Image 
-                className='h-10 w-auto rounded-full' 
-                src={logo} 
-                alt='PropertyPulse' /> */}
-                <h1 className="font-bold text-xl">Namma PG</h1>
-            </Link>
+          <div className='block sm:hidden flex-shrink-0'>
+            <MobileNav />
           </div>
-
-          {/* Center: Links (hidden on small screens) */}
-          <div className='hidden md:flex space-x-4 px-4 bg-black text-white rounded-3xl p-1'>
-            <Link
-              href='/'
-              className={`${
-                pathname === '/' ? 'bg-black' : ''
-              } hover:bg-black rounded-3xl px-4 py-2 text-sm font-medium`}
-            >
-              Home
-            </Link>
-            <Link
-              href='/properties'
-              className={`${
-                pathname === '/properties' ? 'bg-black' : ''
-              } hover:bg-black rounded-3xl px-4 py-2 text-sm font-medium`}
-            >
-              Properties
-            </Link>
-            {session && (
-              <Link
-                href='/properties/add'
-                className={`${
-                  pathname === '/properties/add' ? 'bg-black' : ''
-                } hover:bg-black rounded-3xl px-4 py-2 text-sm font-medium`}
-              >
-                Add Property
-              </Link>
-            )}
-            <CommandMenu className="mt-2" />
+          <div className='hidden md:flex flex-shrink-0'>
+            <MainNav />
           </div>
+         
+          <div className='flex items-center'>           
 
-          {/* Right Side: Profile and Notification */}
-          <div className='flex items-center'>
-            {/* <Link href='/messages' className='relative'>
-              <button
-                type='button'
-                className='rounded-full bg-gray-200 p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
-              >
-                <span className='sr-only'>View notifications</span>
-                <svg
-                  className='h-6 w-6'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  strokeWidth='1.5'
-                  stroke='currentColor'
-                  aria-hidden='true'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0'
-                  />
-                </svg>
-              </button>
-              <UnreadMessageCount />
-            </Link> */}
-
-
+            <CommandMenu className="border size-[30px] hover:bg-gray-100 shadow-sm rounded-sm  mr-1" />
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button variant="ghost" className="p-1 rounded-md border-input bg-transparent border shadow-sm hover:bg-accent hover:text-slate-900">                
@@ -182,8 +125,6 @@ const Navbar = () => {
                 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                {/* <Button variant="outline">Open</Button> */}
-
                 <button
                   type='button'
                   className='flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
@@ -281,7 +222,7 @@ const Navbar = () => {
                   <button
                     key={provider.name}
                     onClick={() => signIn(provider.id)}
-                    className='flex items-center text-white bg-black hover:bg-gray-900 rounded-md px-3 py-2 ml-4'
+                    className='flex items-center text-white text-sm bg-black hover:bg-gray-900 rounded-md px-2 py-1 ml-1'
                   >
                     <FaGoogle className='text-white mr-2' />
                     <span>Login</span>

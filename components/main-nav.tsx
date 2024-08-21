@@ -1,41 +1,78 @@
+"use client"
+
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import { Badge } from "@/components/ui/badge"
 
-interface MainNavProps {
-  items?: NavItem[]
-}
+const MainNav = () => {
+  const pathname = usePathname()
 
-export function MainNav({ items }: MainNavProps) {
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="flex items-center space-x-2">
+    <div className="mr-4 hidden md:flex">
+      <Link href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
-        <span className="inline-block font-bold">{siteConfig.name}</span>
+        <span className="hidden font-bold sm:inline-block">
+          Namma PG
+        </span>
       </Link>
-      {items?.length ? (
-        <nav className="flex gap-6">
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
+      <nav className="flex items-center space-x-6 text-sm font-medium">
+        <Link
+          href="/"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
           )}
-        </nav>
-      ) : null}
+        >
+          Home
+        </Link>
+        <Link
+          href="/properties"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/properties")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Properties
+        </Link>
+        <Link
+          href="/properties/add"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/properties/add")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Add Property
+        </Link>
+        <Link
+          href="/contact"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/contact")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Contact Us
+        </Link>
+        <Link
+          href="#help"
+          className={cn(
+            "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
+          )}
+        >
+          Help
+        </Link>
+      </nav>
     </div>
   )
 }
+export default MainNav

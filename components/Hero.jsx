@@ -6,7 +6,7 @@ import PropertySearchForm from './PropertySearchForm';
 const Hero = () => {
   return (
     <motion.section
-      className='relative min-h-screen bg-cover bg-center bg-no-repeat'
+      className='relative min-h-screen bg-center bg-cover bg-no-repeat'
       style={{ backgroundImage: 'url(/images/home.jpg)' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -16,10 +16,10 @@ const Hero = () => {
        
         <div className='absolute bottom-40 md:bottom-24  w-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center'>
           <div className='text-center mb-8'>
-            <h1 className='text-4xl font-extrabold text-white sm:text-5xl md:text-6xl'>
+            <h1 className='text-3xl font-extrabold text-white sm:text-5xl md:text-6xl'>
               Find The Perfect PG
             </h1>
-            <p className='my-4 text-xl text-slate-200'>
+            <p className='my-4 text-xl text-slate-700 font-semibold'>
               Discover the perfect property that suits your needs.
             </p>
           </div>
