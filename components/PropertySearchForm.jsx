@@ -67,7 +67,7 @@ const PropertySearchForm = () => {
       </div>
       <Button
         type='submit'
-        className='w-full md:w-1/4 ml-2 md:pl-2 mb-4 md:mb-0'
+        className='btn-primary w-full md:w-1/4 ml-2 md:pl-2 mb-4 md:mb-0'
       >
         Search
       </Button>
