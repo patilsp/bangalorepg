@@ -8,7 +8,8 @@ This is the second iteration of the app/course that uses server actions instead 
 
 The `_theme_files` folder contains the pure HTML files with Tailwind classes.
 
-![image](https://github.com/user-attachments/assets/d9255a6d-512b-4c52-b07e-28c12f6abfc4)
+![image](https://github.com/user-attachments/assets/77578324-4ec9-4111-ac5c-bb28b28f6dbb)
+
 
 
 ## Features
